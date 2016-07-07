@@ -1,0 +1,65 @@
+h1, h2, h3, h4, h5, a {
+    font-family: 'VT323';
+    color: #292121
+}
+
+h1 {
+    color: #cb9d04;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    font-size: 0.8em;
+    text-align: justify;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    padding-right: 3%;
+    padding-left: 3%;
+}
+.start-game {
+    vertical-align: middle;
+}
+
+.start-game:hover {
+    cursor: pointer;
+}
+.runaway-box {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-style: solid;
+    border-color: #292121;
+    border-width: thick;
+    -webkit-transition: top 1s, left 1s; /* Safari */
+    transition: top 1s, left 1s;
+}
+
+.position {
+    top: 50%;
+    left: 50%;
+}
+
+.special-box {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: greenyellow;
+    -webkit-transition: top 1s, left 1s; /* Safari */
+    transition: top 1s, left 1s;
+}
+
+.special-box-position {
+
+}   
+    
+
+
+
