@@ -4,6 +4,7 @@ $(document).ready(function () {
     var gameOn = false
     var bonusOn = false;
     var clicksToLevel;
+    var level = 1;
 $("#start").click(startTimer);
     
 function startTimer() {
@@ -20,7 +21,7 @@ function startTimer() {
     var $specialTimer = setInterval (function() {
         if (gameOn == true)
             bonusLevel();
-    }, Math.floor((Math.random()*80)-40)*1000)
+    }, Math.floor(18000 + (Math.random()*80)-40)*1000)
     
     
     var $timer = setInterval (function(){
@@ -42,7 +43,7 @@ function startTimer() {
 }
 
 
- function changeLevel(level) {
+ function changeLevel() {
      var timeToAdd;
      var totalClicks = 0;
      var speed;
@@ -50,7 +51,7 @@ function startTimer() {
      clicksToLevel = Math.pow(level, 2)+(Math.floor(timeToAdd/1000));
      console.log("Time to add: " + timeToAdd)
      console.log("Clicks to levelup " + clicksToLevel)
-     if (clicks == clicksToLevel) {
+     if (clicks >= clicksToLevel) {
          clicks = 0;
          totalClicks += clicks;
          timeleft += timeToAdd;
@@ -69,11 +70,10 @@ function changeSpeed(speed) {
     }
     
 function changeClicks() {
-    var level = 1;
     clicks+=1;
     if (bonusOn == true)
         clicks += 1;
-    changeLevel(level);
+    changeLevel();
     $("#clicks")[0].innerHTML = "Clicks to levelup  : " + (clicksToLevel-clicks);
      
 }
